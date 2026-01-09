@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amruthadhara Infra | Premier Civil Engineering & Construction</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Amruthadhara Infra is a leading civil engineering and construction firm delivering excellence in infrastructure, commercial, and industrial projects.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#051025',     /* Deepest Blue */
+                            blue: '#0a2558',     /* Primary Blue */
+                            cyan: '#00b4d8',     /* Waterfall Highlight */
+                            light: '#e0f2fe',    /* Light Cyan Tint */
+                            silver: '#e2e8f0',   /* Metallic Light */
+                            metal: '#64748b',    /* Metallic Dark */
+                            chrome: '#f8fafc'    /* Shine */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Montserrat', 'system-ui', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'waterfall': 'linear-gradient(to right, #00b4d8, #0077b6)',
+                        'hero-overlay': 'linear-gradient(to right, rgba(5, 16, 37, 0.9), rgba(5, 16, 37, 0.4))',
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(0, 180, 216, 0.15)',
+                        'glow-strong': '0 0 30px rgba(0, 180, 216, 0.3)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'shimmer': 'shimmer 2s linear infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        // Preloader animations
+                        'corner-tl': 'cornerTL 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+                        'corner-tr': 'cornerTR 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+                        'corner-bl': 'cornerBL 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+                        'corner-br': 'cornerBR 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-1000px 0' },
+                            '100%': { backgroundPosition: '1000px 0' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        // Animation: Start off-screen/rotated -> Assemble at center
+                        cornerTL: {
+                            '0%': { transform: 'translate(-100vw, -100vh) rotate(-45deg) scale(0.5)', opacity: '0' },
+                            '60%': { transform: 'translate(-5px, -5px) rotate(0deg) scale(1.05)', opacity: '1' },
+                            '100%': { transform: 'translate(0, 0) scale(1)', opacity: '1' }
+                        },
+                        cornerTR: {
+                            '0%': { transform: 'translate(100vw, -100vh) rotate(45deg) scale(0.5)', opacity: '0' },
+                            '60%': { transform: 'translate(5px, -5px) rotate(0deg) scale(1.05)', opacity: '1' },
+                            '100%': { transform: 'translate(0, 0) scale(1)', opacity: '1' }
+                        },
+                        cornerBL: {
+                            '0%': { transform: 'translate(-100vw, 100vh) rotate(45deg) scale(0.5)', opacity: '0' },
+                            '60%': { transform: 'translate(-5px, 5px) rotate(0deg) scale(1.05)', opacity: '1' },
+                            '100%': { transform: 'translate(0, 0) scale(1)', opacity: '1' }
+                        },
+                        cornerBR: {
+                            '0%': { transform: 'translate(100vw, 100vh) rotate(-45deg) scale(0.5)', opacity: '0' },
+                            '60%': { transform: 'translate(5px, 5px) rotate(0deg) scale(1.05)', opacity: '1' },
+                            '100%': { transform: 'translate(0, 0) scale(1)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@600;700;800&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
+        
+        /* Glassmorphism Classes */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+        }
+
+        .glass-dark {
+            background: rgba(5, 16, 37, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, #0a2558 0%, #051025 100%);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+        }
+        #preloader.hidden { opacity: 0; visibility: hidden; }
+
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Scroll Progress Bar */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #00b4d8, #ffffff);
+            z-index: 100;
+            width: 0%;
+            transition: width 0.1s;
+            box-shadow: 0 0 10px #00b4d8;
+        }
+
+        /* Reveal Animation */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #051025; }
+        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00b4d8; }
+
+        .nav-link.active {
+            color: #00b4d8 !important;
+            text-shadow: 0 0 10px rgba(0, 180, 216, 0.5);
+        }
+
+        /* Shine Effect for Buttons */
+        .btn-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shine::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-25deg);
+            transition: 0.5s;
+        }
+        .btn-shine:hover::after {
+            left: 100%;
+            transition: 0.7s;
+        }
+    </style>
+</head>
+<body class="text-slate-700 bg-slate-50 antialiased selection:bg-brand-cyan selection:text-white">
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="flex flex-col items-center justify-center">
+            <!-- Logo Split Container -->
+            <div class="relative w-48 h-48 md:w-64 md:h-64 flex flex-wrap justify-center items-center">
+                
+                <!-- Top Left Block -->
+                <div class="w-1/2 h-1/2 bg-white rounded-tl-2xl overflow-hidden animate-corner-tl shadow-glow z-10 border-r border-b border-brand-cyan/20 relative group">
+                    <img src="images/logo.png" alt="Logo Top Left" class="absolute w-[200%] h-[200%] max-w-none top-0 left-0 object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+
+                <!-- Top Right Block -->
+                <div class="w-1/2 h-1/2 bg-white rounded-tr-2xl overflow-hidden animate-corner-tr shadow-glow z-10 border-l border-b border-brand-cyan/20 relative group">
+                    <img src="images/logo.png" alt="Logo Top Right" class="absolute w-[200%] h-[200%] max-w-none top-0 left-[-100%] object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+
+                <!-- Bottom Left Block -->
+                <div class="w-1/2 h-1/2 bg-white rounded-bl-2xl overflow-hidden animate-corner-bl shadow-glow z-10 border-r border-t border-brand-cyan/20 relative group">
+                    <img src="images/logo.png" alt="Logo Bottom Left" class="absolute w-[200%] h-[200%] max-w-none top-[-100%] left-0 object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+
+                <!-- Bottom Right Block -->
+                <div class="w-1/2 h-1/2 bg-white rounded-br-2xl overflow-hidden animate-corner-br shadow-glow z-10 border-l border-t border-brand-cyan/20 relative group">
+                    <img src="images/logo.png" alt="Logo Bottom Right" class="absolute w-[200%] h-[200%] max-w-none top-[-100%] left-[-100%] object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                
+            </div>
+            
+            <!-- Loading Text -->
+            <div class="mt-12 text-center">
+                <h2 class="text-brand-cyan text-lg md:text-xl font-display font-bold tracking-[0.4em] animate-pulse uppercase">Amruthadhara</h2>
+                <p class="text-slate-400 text-xs tracking-[0.2em] mt-2 uppercase">Engineering Excellence</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 border-b border-white/5">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <!-- Brand Logo -->
+            <a href="#" class="text-2xl font-bold flex items-center gap-3 group">
+                <div class="relative h-12 w-auto transition-transform group-hover:scale-105 duration-300">
+                    <img id="nav-logo" src="images/logo.png" alt="Amruthadhara Infra Logo" 
+                         class="h-12 w-auto object-contain drop-shadow-md"
+                         onerror="this.style.display='none'; document.getElementById('text-logo-icon').style.display='flex';">
+                    <div id="text-logo-icon" class="hidden h-10 w-10 bg-gradient-to-br from-slate-100 to-slate-300 rounded items-center justify-center text-brand-navy text-xl">
+                        <i class="fa-solid fa-city"></i>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl md:text-2xl font-display tracking-tight text-white group-hover:text-brand-cyan transition-colors">Amruthadhara</span>
+                    <span class="text-[10px] tracking-[0.3em] text-brand-cyan uppercase font-light group-hover:text-white transition-colors">Infra</span>
+                </div>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="nav-link text-slate-300 hover:text-white transition-colors font-medium text-sm uppercase tracking-wide py-2 relative group">
+                    Home
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-cyan transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#about" class="nav-link text-slate-300 hover:text-white transition-colors font-medium text-sm uppercase tracking-wide py-2 relative group">
+                    About
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-cyan transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#services" class="nav-link text-slate-300 hover:text-white transition-colors font-medium text-sm uppercase tracking-wide py-2 relative group">
+                    Services
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-cyan transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#projects" class="nav-link text-slate-300 hover:text-white transition-colors font-medium text-sm uppercase tracking-wide py-2 relative group">
+                    Projects
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-brand-cyan transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#contact" class="btn-shine bg-waterfall text-white px-7 py-2.5 rounded-sm hover:shadow-glow-strong transition-all font-semibold text-sm uppercase tracking-wider transform hover:-translate-y-0.5">
+                    Get Quote
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none p-2 hover:text-brand-cyan transition-colors" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars-staggered text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="md:hidden glass-dark border-t border-white/10 overflow-hidden max-h-0 transition-all duration-300 ease-in-out">
+            <div class="flex flex-col px-6 py-6 space-y-4 text-center">
+                <a href="#home" class="nav-link text-slate-300 hover:text-brand-cyan mobile-link block py-2 border-b border-white/5">Home</a>
+                <a href="#about" class="nav-link text-slate-300 hover:text-brand-cyan mobile-link block py-2 border-b border-white/5">About</a>
+                <a href="#services" class="nav-link text-slate-300 hover:text-brand-cyan mobile-link block py-2 border-b border-white/5">Services</a>
+                <a href="#projects" class="nav-link text-slate-300 hover:text-brand-cyan mobile-link block py-2 border-b border-white/5">Projects</a>
+                <a href="#contact" class="text-brand-cyan font-bold mobile-link block py-3 border border-brand-cyan/30 rounded mt-2 bg-brand-navy/50">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Floating Action Buttons -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
+        <!-- Back to Top -->
+        <button id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="w-12 h-12 bg-slate-800/90 border border-slate-600 rounded flex items-center justify-center text-white shadow-lg hover:border-brand-cyan hover:bg-brand-navy transition-all duration-300 opacity-0 pointer-events-none transform translate-y-4 backdrop-blur-sm">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/919347051097" target="_blank" class="w-14 h-14 bg-green-600 rounded-full flex items-center justify-center text-white shadow-glow hover:bg-green-500 hover:scale-110 transition-all duration-300 group relative z-10">
+            <span class="absolute inset-0 rounded-full bg-green-600 animate-ping opacity-20"></span>
+            <i class="fa-brands fa-whatsapp text-3xl"></i>
+        </a>
+        
+        <!-- Call -->
+        <a href="tel:+919347051097" class="w-14 h-14 bg-gradient-to-r from-blue-600 to-blue-800 rounded-full flex items-center justify-center text-white shadow-glow hover:scale-110 transition-all duration-300 animate-pulse-slow border border-blue-400/30 relative z-10">
+            <i class="fa-solid fa-phone text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center text-white overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center bg-fixed" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-hero-overlay"></div>
+        <!-- Grid Pattern -->
+        <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px); background-size: 40px 40px;"></div>
+        
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="reveal active">
+                <div class="inline-flex items-center gap-2 py-1.5 px-5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-sm font-medium mb-8 text-brand-cyan shadow-lg animate-fade-in">
+                    <span class="w-2 h-2 rounded-full bg-brand-cyan animate-pulse"></span> Engineering The Future
+                </div>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight font-display tracking-tight drop-shadow-2xl">
+                    <span class="text-gradient-silver">PRECISION</span> <br> 
+                    <span class="text-transparent bg-clip-text bg-waterfall">INNOVATION</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-200 mb-10 max-w-2xl mx-auto font-light leading-relaxed border-l-4 border-brand-cyan pl-6 text-left md:text-center md:border-l-0 md:pl-0 drop-shadow-md">
+                    From complex infrastructure to commercial high-rises, we combine structural integrity with aesthetic fluid design.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                    <a href="#projects" class="group relative px-8 py-4 bg-transparent border border-white/30 text-white font-semibold rounded hover:bg-white/10 transition-all duration-300 backdrop-blur-sm overflow-hidden">
+                        <span class="relative z-10">View Portfolio</span>
+                        <div class="absolute inset-0 bg-white/10 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+                    </a>
+                    <a href="#contact" class="btn-shine px-8 py-4 bg-waterfall text-white font-semibold rounded shadow-glow hover:shadow-glow-strong transition-all duration-300 transform hover:-translate-y-1">
+                        Start a Project
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <a href="#about" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-brand-cyan/70 hover:text-brand-cyan cursor-pointer p-4">
+            <i class="fa-solid fa-angles-down text-3xl"></i>
+        </a>
+    </section>
+
+    <!-- Stats Section (Metallic) -->
+    <div class="relative z-20 -mt-20 mx-4 md:mx-auto md:max-w-6xl">
+        <div class="bg-gradient-to-r from-slate-900 via-brand-navy to-slate-900 rounded-sm shadow-2xl shadow-black/50 border border-white/10 overflow-hidden backdrop-blur-xl">
+            <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
+                <div class="p-8 text-center text-white group hover:bg-white/5 transition-colors relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-brand-cyan transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
+                    <div class="text-4xl md:text-5xl font-bold mb-2 counter font-display" data-target="25">0</div>
+                    <div class="text-xs text-slate-400 font-bold uppercase tracking-widest group-hover:text-brand-cyan transition-colors">Years Experience</div>
+                </div>
+                <div class="p-8 text-center text-white group hover:bg-white/5 transition-colors relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-brand-cyan transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 delay-75"></div>
+                    <div class="text-4xl md:text-5xl font-bold mb-2 counter font-display" data-target="350">0</div>
+                    <div class="text-xs text-slate-400 font-bold uppercase tracking-widest group-hover:text-brand-cyan transition-colors">Projects Done</div>
+                </div>
+                <div class="p-8 text-center text-white group hover:bg-white/5 transition-colors relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-brand-cyan transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 delay-150"></div>
+                    <div class="text-4xl md:text-5xl font-bold mb-2 counter font-display" data-target="120">0</div>
+                    <div class="text-xs text-slate-400 font-bold uppercase tracking-widest group-hover:text-brand-cyan transition-colors">Expert Engineers</div>
+                </div>
+                <div class="p-8 text-center text-white group hover:bg-white/5 transition-colors relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-brand-cyan transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 delay-200"></div>
+                    <div class="text-4xl md:text-5xl font-bold mb-2 counter font-display" data-target="15">0</div>
+                    <div class="text-xs text-slate-400 font-bold uppercase tracking-widest group-hover:text-brand-cyan transition-colors">Awards Won</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white overflow-hidden relative">
+        <!-- Deco -->
+        <div class="absolute right-0 top-1/4 w-1/3 h-1/2 bg-brand-light -skew-x-12 opacity-50 z-0"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-start gap-16">
+                <div class="lg:w-1/2 reveal">
+                    <div class="relative group sticky top-24">
+                        <!-- Metallic Border Effect -->
+                        <div class="absolute -inset-2 bg-gradient-to-r from-brand-silver to-brand-light rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Construction Site Team" 
+                             class="relative rounded-sm shadow-2xl w-full object-cover h-[500px] lg:h-[600px] transform group-hover:scale-[1.01] transition-transform duration-700"
+                             loading="lazy">
+                        
+                        <!-- Floating Card -->
+                        <div class="absolute -bottom-8 -right-8 glass-card p-6 rounded-sm shadow-xl hidden md:block max-w-xs animate-float">
+                            <div class="flex items-center gap-4">
+                                <div class="w-14 h-14 rounded-full bg-brand-cyan flex items-center justify-center text-white text-2xl shadow-lg">
+                                    <i class="fa-solid fa-check-double"></i>
+                                </div>
+                                <div>
+                                    <div class="text-brand-navy font-bold text-lg">ISO 9001:2015</div>
+                                    <div class="text-slate-500 text-xs uppercase tracking-wide">Certified Quality</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 reveal delay-100 pt-8">
+                    <div class="inline-block border-b-2 border-brand-cyan pb-1 mb-4">
+                        <span class="text-brand-blue font-bold uppercase tracking-widest text-xs">Who We Are</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-brand-navy mb-4 leading-tight">
+                        About <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-brand-cyan">Amruthadhara</span>
+                    </h2>
+                    <p class="text-brand-cyan font-semibold text-sm uppercase tracking-wider mb-6">#Thoughtful Design #Disciplined Execution</p>
+                    
+                    <p class="text-slate-600 mb-6 leading-relaxed text-lg font-light">
+                        We are a civil-engineering-led Private Limited Company delivering integrated solutions across construction, interiors, water infrastructure and development. We believe good design begins with a site visit, understanding ground realities before committing solutions.
+                    </p>
+                    
+                    <p class="text-slate-600 mb-8 leading-relaxed">
+                        Our work spans rural, semi-urban and urban India, combining technical expertise, practical execution and long-term performance focus to meet the evolving needs of India's built environment.
+                    </p>
+
+                    <!-- Vision Block -->
+                    <div class="bg-slate-50 border-l-4 border-brand-navy p-6 mb-8 rounded-r-lg shadow-sm hover:shadow-md transition-shadow">
+                        <h4 class="text-brand-navy font-bold text-xl mb-2 font-display flex items-center gap-2">
+                            <i class="fa-regular fa-eye text-brand-cyan"></i> Vision
+                        </h4>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            To be a leading engineering and construction company delivering sustainable, innovative, and high-quality solutions across construction, interiors, water infrastructure, and real estate, creating long-term value for clients, communities, and the environment.
+                        </p>
+                    </div>
+
+                    <!-- Mission Block -->
+                    <div class="mb-8">
+                        <h4 class="text-brand-navy font-bold text-xl mb-4 font-display flex items-center gap-2">
+                            <i class="fa-solid fa-bullseye text-brand-cyan"></i> Mission
+                        </h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3 group">
+                                <div class="mt-1 w-5 h-5 rounded-full border border-brand-cyan flex items-center justify-center text-brand-cyan group-hover:bg-brand-cyan group-hover:text-white transition-colors">
+                                    <i class="fa-solid fa-check text-xs"></i>
+                                </div>
+                                <span class="text-slate-600 text-sm">Provide site-first, practical construction and consultancy solutions.</span>
+                            </li>
+                            <li class="flex items-start gap-3 group">
+                                <div class="mt-1 w-5 h-5 rounded-full border border-brand-cyan flex items-center justify-center text-brand-cyan group-hover:bg-brand-cyan group-hover:text-white transition-colors">
+                                    <i class="fa-solid fa-check text-xs"></i>
+                                </div>
+                                <span class="text-slate-600 text-sm">Deliver projects with sustainability and durability at the core.</span>
+                            </li>
+                            <li class="flex items-start gap-3 group">
+                                <div class="mt-1 w-5 h-5 rounded-full border border-brand-cyan flex items-center justify-center text-brand-cyan group-hover:bg-brand-cyan group-hover:text-white transition-colors">
+                                    <i class="fa-solid fa-check text-xs"></i>
+                                </div>
+                                <span class="text-slate-600 text-sm">Enhance innovation, research, and adoption of modern materials.</span>
+                            </li>
+                            <li class="flex items-start gap-3 group">
+                                <div class="mt-1 w-5 h-5 rounded-full border border-brand-cyan flex items-center justify-center text-brand-cyan group-hover:bg-brand-cyan group-hover:text-white transition-colors">
+                                    <i class="fa-solid fa-check text-xs"></i>
+                                </div>
+                                <span class="text-slate-600 text-sm">Build trust through disciplined execution and measurable outcomes.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#contact" class="group inline-flex items-center gap-3 text-brand-navy font-bold hover:text-brand-cyan transition-colors uppercase text-sm tracking-wide border-b-2 border-transparent hover:border-brand-cyan pb-1">
+                        More About Us <i class="fa-solid fa-arrow-right-long transform group-hover:translate-x-2 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-slate-50 relative overflow-hidden">
+        <div class="absolute inset-0 bg-slate-100 opacity-50" style="background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 20px 20px;"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-brand-cyan font-bold uppercase tracking-widest text-xs mb-2 block">Our Expertise</span>
+                <h2 class="text-4xl font-bold text-brand-navy mb-4">Engineering Solutions</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-brand-navy to-brand-cyan mx-auto rounded-full mb-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card Template -->
+                <div class="bg-white p-8 rounded-sm shadow-lg hover:shadow-glow-strong hover:-translate-y-2 transition-all duration-300 group reveal border-b-2 border-transparent hover:border-brand-cyan relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-full -mr-16 -mt-16 group-hover:bg-brand-light transition-colors"></div>
+                    
+                    <div class="w-16 h-16 bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-100 rounded-lg flex items-center justify-center mb-6 text-brand-navy group-hover:text-white group-hover:from-brand-blue group-hover:to-brand-cyan transition-all duration-300 shadow-sm group-hover:shadow-md relative z-10">
+                        <i class="fa-solid fa-building-user text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-blue relative z-10">General Contracting</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4 relative z-10">Complete oversight of construction projects, managing vendors, and ensuring quality execution with military precision.</p>
+                    <a href="#contact" class="text-brand-cyan text-xs font-bold uppercase tracking-wide flex items-center gap-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 relative z-10">Learn More <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                </div>
+
+                <div class="bg-white p-8 rounded-sm shadow-lg hover:shadow-glow-strong hover:-translate-y-2 transition-all duration-300 group reveal delay-75 border-b-2 border-transparent hover:border-brand-cyan relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-full -mr-16 -mt-16 group-hover:bg-brand-light transition-colors"></div>
+                    <div class="w-16 h-16 bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-100 rounded-lg flex items-center justify-center mb-6 text-brand-navy group-hover:text-white group-hover:from-brand-blue group-hover:to-brand-cyan transition-all duration-300 shadow-sm group-hover:shadow-md relative z-10">
+                        <i class="fa-solid fa-compass-drafting text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-blue relative z-10">Design & Build</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4 relative z-10">Integrated services handling architectural design and structural engineering, streamlining communication.</p>
+                    <a href="#contact" class="text-brand-cyan text-xs font-bold uppercase tracking-wide flex items-center gap-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 relative z-10">Learn More <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                </div>
+
+                <div class="bg-white p-8 rounded-sm shadow-lg hover:shadow-glow-strong hover:-translate-y-2 transition-all duration-300 group reveal delay-100 border-b-2 border-transparent hover:border-brand-cyan relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-full -mr-16 -mt-16 group-hover:bg-brand-light transition-colors"></div>
+                    <div class="w-16 h-16 bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-100 rounded-lg flex items-center justify-center mb-6 text-brand-navy group-hover:text-white group-hover:from-brand-blue group-hover:to-brand-cyan transition-all duration-300 shadow-sm group-hover:shadow-md relative z-10">
+                        <i class="fa-solid fa-bridge text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-blue relative z-10">Infrastructure</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4 relative z-10">Development of roads, bridges, and utilities. Connecting communities with robust engineering.</p>
+                    <a href="#contact" class="text-brand-cyan text-xs font-bold uppercase tracking-wide flex items-center gap-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 relative z-10">Learn More <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                </div>
+
+                <!-- Updated: Water & Climate Infrastructure -->
+                <div class="bg-white p-8 rounded-sm shadow-lg hover:shadow-glow-strong hover:-translate-y-2 transition-all duration-300 group reveal border-b-2 border-transparent hover:border-brand-cyan relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-full -mr-16 -mt-16 group-hover:bg-brand-light transition-colors"></div>
+                    <div class="w-16 h-16 bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-100 rounded-lg flex items-center justify-center mb-6 text-brand-navy group-hover:text-white group-hover:from-brand-blue group-hover:to-brand-cyan transition-all duration-300 shadow-sm group-hover:shadow-md relative z-10">
+                        <i class="fa-solid fa-cloud-showers-heavy text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-blue relative z-10">Water & Climate</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4 relative z-10">
+                        Rainwater Harvesting, Recharge & Flood Management. We design and implement engineering-led solutions tailored to site study.
+                    </p>
+                    <a href="#contact" class="text-brand-cyan text-xs font-bold uppercase tracking-wide flex items-center gap-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 relative z-10">Learn More <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                </div>
+
+                <div class="bg-white p-8 rounded-sm shadow-lg hover:shadow-glow-strong hover:-translate-y-2 transition-all duration-300 group reveal delay-75 border-b-2 border-transparent hover:border-brand-cyan relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-full -mr-16 -mt-16 group-hover:bg-brand-light transition-colors"></div>
+                    <div class="w-16 h-16 bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-100 rounded-lg flex items-center justify-center mb-6 text-brand-navy group-hover:text-white group-hover:from-brand-blue group-hover:to-brand-cyan transition-all duration-300 shadow-sm group-hover:shadow-md relative z-10">
+                        <i class="fa-solid fa-industry text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-blue relative z-10">Industrial</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4 relative z-10">Heavy manufacturing plants, warehouses, and specialized steel structure fabrication.</p>
+                    <a href="#contact" class="text-brand-cyan text-xs font-bold uppercase tracking-wide flex items-center gap-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 relative z-10">Learn More <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                </div>
+
+                <div class="bg-white p-8 rounded-sm shadow-lg hover:shadow-glow-strong hover:-translate-y-2 transition-all duration-300 group reveal delay-100 border-b-2 border-transparent hover:border-brand-cyan relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-slate-50 rounded-bl-full -mr-16 -mt-16 group-hover:bg-brand-light transition-colors"></div>
+                    <div class="w-16 h-16 bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-100 rounded-lg flex items-center justify-center mb-6 text-brand-navy group-hover:text-white group-hover:from-brand-blue group-hover:to-brand-cyan transition-all duration-300 shadow-sm group-hover:shadow-md relative z-10">
+                        <i class="fa-solid fa-fill-drip text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-blue relative z-10">Renovation</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-4 relative z-10">Modernizing existing structures and expanding facilities to meet growing business needs.</p>
+                    <a href="#contact" class="text-brand-cyan text-xs font-bold uppercase tracking-wide flex items-center gap-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 relative z-10">Learn More <i class="fa-solid fa-chevron-right text-[10px]"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
+                <div>
+                    <span class="text-brand-cyan font-bold uppercase tracking-widest text-xs mb-2 block">Our Portfolio</span>
+                    <h2 class="text-4xl font-bold text-brand-navy">Recent Works</h2>
+                </div>
+                <div class="mt-6 md:mt-0 flex flex-wrap gap-3">
+                    <button class="px-6 py-2 bg-brand-navy text-white rounded-sm text-sm font-semibold shadow-lg hover:bg-brand-blue transition transform hover:-translate-y-0.5">All</button>
+                    <button class="px-6 py-2 bg-white text-slate-600 border border-slate-200 rounded-sm text-sm font-semibold hover:bg-slate-50 hover:text-brand-cyan hover:border-brand-cyan transition">Commercial</button>
+                    <button class="px-6 py-2 bg-white text-slate-600 border border-slate-200 rounded-sm text-sm font-semibold hover:bg-slate-50 hover:text-brand-cyan hover:border-brand-cyan transition">Infrastructure</button>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Item (Modified for Metallic Look) -->
+                <div class="group relative overflow-hidden rounded-sm cursor-pointer shadow-lg reveal">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Project" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8 border-b-4 border-brand-cyan">
+                        <span class="text-brand-cyan font-bold text-xs mb-1 uppercase tracking-wider transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Commercial</span>
+                        <h3 class="text-white text-2xl font-bold mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Skyline Tower</h3>
+                        <p class="text-slate-300 text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">New York City, NY</p>
+                    </div>
+                </div>
+                
+                <div class="group relative overflow-hidden rounded-sm cursor-pointer shadow-lg reveal delay-75">
+                    <img src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Project" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8 border-b-4 border-brand-cyan">
+                        <span class="text-brand-cyan font-bold text-xs mb-1 uppercase tracking-wider transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Infrastructure</span>
+                        <h3 class="text-white text-2xl font-bold mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Harbor Bridge</h3>
+                        <p class="text-slate-300 text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">San Francisco, CA</p>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-sm cursor-pointer shadow-lg reveal delay-150">
+                    <img src="https://images.unsplash.com/photo-1590486803833-1c5dc8ce34f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Project" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8 border-b-4 border-brand-cyan">
+                        <span class="text-brand-cyan font-bold text-xs mb-1 uppercase tracking-wider transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Industrial</span>
+                        <h3 class="text-white text-2xl font-bold mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Tech Logistics Hub</h3>
+                        <p class="text-slate-300 text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Austin, TX</p>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-sm cursor-pointer shadow-lg reveal">
+                    <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Project" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8 border-b-4 border-brand-cyan">
+                        <span class="text-brand-cyan font-bold text-xs mb-1 uppercase tracking-wider transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Residential</span>
+                        <h3 class="text-white text-2xl font-bold mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Green Valley Estates</h3>
+                        <p class="text-slate-300 text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Denver, CO</p>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-sm cursor-pointer shadow-lg reveal delay-75">
+                    <img src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Project" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8 border-b-4 border-brand-cyan">
+                        <span class="text-brand-cyan font-bold text-xs mb-1 uppercase tracking-wider transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Commercial</span>
+                        <h3 class="text-white text-2xl font-bold mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Innovation Center</h3>
+                        <p class="text-slate-300 text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Seattle, WA</p>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-sm cursor-pointer shadow-lg reveal delay-150">
+                    <img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Project" class="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8 border-b-4 border-brand-cyan">
+                        <span class="text-brand-cyan font-bold text-xs mb-1 uppercase tracking-wider transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Infrastructure</span>
+                        <h3 class="text-white text-2xl font-bold mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Interstate Expansion</h3>
+                        <p class="text-slate-300 text-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">Phoenix, AZ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership / Team Section -->
+    <section id="leadership" class="py-24 bg-brand-chrome relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-brand-cyan font-bold uppercase tracking-widest text-xs mb-2 block">Our Leadership</span>
+                <h2 class="text-4xl font-bold text-brand-navy mb-4">Meet The Visionaries</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-brand-navy to-brand-cyan mx-auto rounded-full mb-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- CEO Card -->
+                <div class="bg-white p-8 rounded-sm shadow-xl text-center group hover:-translate-y-2 transition-all duration-300 reveal border-t-4 border-slate-200 hover:border-brand-cyan relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-brand-cyan transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                    <div class="relative w-32 h-32 mx-auto mb-6">
+                        <img src="images/nagesh.jpg" alt="CEO" class="w-full h-full rounded-full object-cover p-1 bg-white border border-slate-200 shadow-md group-hover:border-brand-cyan transition-colors" loading="lazy">
+                        <div class="absolute bottom-0 right-0 bg-brand-cyan text-white w-8 h-8 rounded-full flex items-center justify-center text-xs shadow-lg"><i class="fa-solid fa-quote-right"></i></div>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-1 group-hover:text-brand-blue">Nageshwarao</h3>
+                    <p class="text-brand-blue font-bold text-xs uppercase tracking-widest mb-4">CEO & Founder</p>
+                    <p class="text-sm text-slate-500 mb-6 leading-relaxed">Driving the company with site-first planning and hands-on execution excellence.</p>
+                </div>
+
+                <!-- CTO Card -->
+                <div class="bg-white p-8 rounded-sm shadow-xl text-center group hover:-translate-y-2 transition-all duration-300 reveal delay-100 border-t-4 border-slate-200 hover:border-brand-cyan relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-brand-cyan transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                    <div class="relative w-32 h-32 mx-auto mb-6">
+                        <img src="images/lakshmi.jpg" alt="CTO" class="w-full h-full rounded-full object-cover p-1 bg-white border border-slate-200 shadow-md group-hover:border-brand-cyan transition-colors" loading="lazy">
+                         <div class="absolute bottom-0 right-0 bg-brand-cyan text-white w-8 h-8 rounded-full flex items-center justify-center text-xs shadow-lg"><i class="fa-solid fa-chart-line"></i></div>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-1 group-hover:text-brand-blue">Lakshmi</h3>
+                    <p class="text-brand-blue font-bold text-xs uppercase tracking-widest mb-4">CTO</p>
+                    <p class="text-sm text-slate-500 mb-6 leading-relaxed">Ensuring financial discipline and sustainable growth through strong technical strategy.</p>
+                </div>
+
+                <!-- Director Card -->
+                <div class="bg-white p-8 rounded-sm shadow-xl text-center group hover:-translate-y-2 transition-all duration-300 reveal delay-200 border-t-4 border-slate-200 hover:border-brand-cyan relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-brand-cyan transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                    <div class="relative w-32 h-32 mx-auto mb-6">
+                        <img src="images/mounika.jpg" alt="Director" class="w-full h-full rounded-full object-cover p-1 bg-white border border-slate-200 shadow-md group-hover:border-brand-cyan transition-colors" loading="lazy">
+                         <div class="absolute bottom-0 right-0 bg-brand-cyan text-white w-8 h-8 rounded-full flex items-center justify-center text-xs shadow-lg"><i class="fa-solid fa-compass"></i></div>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy mb-1 group-hover:text-brand-blue">Mounika</h3>
+                    <p class="text-brand-blue font-bold text-xs uppercase tracking-widest mb-4">CTO</p>
+                    <p class="text-sm text-slate-500 mb-6 leading-relaxed">Ensuring technical excellence and innovation in daily operations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us (Dark Theme for Contrast) -->
+    <section class="py-24 bg-brand-navy text-white relative overflow-hidden">
+        <!-- Shine Effect Background -->
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 bg-brand-blue/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -mb-20 -ml-20 w-96 h-96 bg-brand-cyan/10 rounded-full blur-3xl"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 reveal">
+                    <span class="text-brand-cyan font-bold uppercase tracking-widest text-xs mb-2 block">Our Value Proposition</span>
+                    <h2 class="text-4xl font-bold mb-6 leading-tight">Building With <br> <span class="text-gradient-silver">Integrity</span> and Innovation</h2>
+                    <p class="text-slate-400 mb-8 leading-relaxed text-lg font-light">
+                        The fluidity of our waterfall logo represents our adaptability, while the skyscraper represents our unyielding standards. We merge these concepts to deliver superior construction.
+                    </p>
+                    
+                    <div class="space-y-8">
+                        <div class="flex gap-5 group">
+                            <div class="flex-shrink-0 w-14 h-14 rounded-lg bg-gradient-to-br from-white/10 to-white/5 border border-white/10 flex items-center justify-center text-brand-cyan shadow-lg backdrop-blur-sm group-hover:bg-brand-cyan group-hover:text-white transition-all duration-300">
+                                <i class="fa-solid fa-medal text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 group-hover:text-brand-cyan transition-colors">Quality Assurance</h3>
+                                <p class="text-slate-400 text-sm leading-relaxed">Rigorous material testing and metallic-grade structural analysis.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5 group">
+                            <div class="flex-shrink-0 w-14 h-14 rounded-lg bg-gradient-to-br from-white/10 to-white/5 border border-white/10 flex items-center justify-center text-brand-cyan shadow-lg backdrop-blur-sm group-hover:bg-brand-cyan group-hover:text-white transition-all duration-300">
+                                <i class="fa-solid fa-stopwatch text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2 group-hover:text-brand-cyan transition-colors">On-Time Delivery</h3>
+                                <p class="text-slate-400 text-sm leading-relaxed">Precision scheduling ensuring no delays in project handover.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 w-full reveal delay-100">
+                    <div class="relative p-2 bg-gradient-to-br from-white/20 to-transparent rounded-lg backdrop-blur-md border border-white/10 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Engineer using tablet" class="w-full rounded h-[500px] object-cover" loading="lazy">
+                        <div class="absolute -bottom-6 -left-6 bg-brand-blue text-white p-6 rounded shadow-xl hidden lg:block max-w-xs border border-white/10 backdrop-blur-md">
+                            <p class="font-bold text-lg mb-1">Smart Construction</p>
+                            <p class="text-sm opacity-70">Utilizing BIM for precision.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-24 bg-slate-50 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <span class="text-brand-cyan font-bold uppercase tracking-widest text-xs mb-2 block">Testimonials</span>
+                <h2 class="text-4xl font-bold text-brand-navy mb-4">Client Reviews</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-brand-navy to-brand-cyan mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-sm shadow-lg border-t-4 border-brand-navy reveal hover:-translate-y-1 transition-transform duration-300">
+                    <div class="flex text-brand-cyan mb-6 text-xs gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 mb-8 italic leading-relaxed text-sm">
+                        "Amruthadhara Infra delivered our office complex ahead of schedule. The structural finish is sleek and modern, matching their own brand identity."
+                    </p>
+                    <div class="flex items-center gap-4 border-t border-slate-100 pt-6">
+                        <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-500 font-bold text-sm">JR</div>
+                        <div>
+                            <h5 class="font-bold text-brand-navy text-sm">Johnathan Reeves</h5>
+                            <p class="text-xs text-slate-500 uppercase">CEO, TechCore Inc.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-sm shadow-lg border-t-4 border-brand-navy reveal delay-75 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="flex text-brand-cyan mb-6 text-xs gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 mb-8 italic leading-relaxed text-sm">
+                        "Professional, safety-conscious, and easy to work with. They truly understood our vision for the community center."
+                    </p>
+                    <div class="flex items-center gap-4 border-t border-slate-100 pt-6">
+                         <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-500 font-bold text-sm">SJ</div>
+                        <div>
+                            <h5 class="font-bold text-brand-navy text-sm">Sarah Jenkins</h5>
+                            <p class="text-xs text-slate-500 uppercase">City Planner</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-sm shadow-lg border-t-4 border-brand-navy reveal delay-150 hover:-translate-y-1 transition-transform duration-300">
+                    <div class="flex text-brand-cyan mb-6 text-xs gap-1">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-slate-600 mb-8 italic leading-relaxed text-sm">
+                        "Excellent communication throughout the entire project. The bridge they built is a masterpiece of civil engineering."
+                    </p>
+                    <div class="flex items-center gap-4 border-t border-slate-100 pt-6">
+                         <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-500 font-bold text-sm">MR</div>
+                        <div>
+                            <h5 class="font-bold text-brand-navy text-sm">Michael Ross</h5>
+                            <p class="text-xs text-slate-500 uppercase">Director of Operations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-24 bg-gradient-to-r from-brand-navy to-brand-blue text-white relative overflow-hidden">
+        <!-- Abstract Decoration -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 32px 32px;"></div>
+        
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-2/3 reveal">
+                    <div class="inline-flex items-center gap-3 mb-4 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm">
+                         <i class="fa-solid fa-trophy text-brand-cyan text-xl animate-pulse"></i>
+                         <span class="text-sm font-bold uppercase tracking-widest text-brand-cyan">Recognition & Excellence</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight font-display">
+                        1st Winner of <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">Ideathon 2025</span>
+                    </h2>
+                    <p class="text-xl text-slate-300 font-light mb-2">Category: <span class="text-white font-medium">Agriculture and Rural Innovation</span></p>
+                    <p class="text-lg text-slate-300 mb-8">Project: <strong class="text-white">"Innovative Integrated Solutions"</strong></p>
+                    
+                    <p class="text-slate-300 mb-8 leading-relaxed max-w-2xl border-l-2 border-brand-cyan pl-6">
+                        This achievement reflects our commitment to innovation, problem-solving, and practical engineering solutions for India's development challenges. We are proud to be associated with the Department of Information Technology and Communications, Government of Telangana and supported by multiple industry partners.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4">
+                        <div class="px-6 py-3 rounded bg-white/5 border border-white/10 flex items-center gap-3 hover:bg-white/10 transition-colors cursor-default">
+                            <i class="fa-solid fa-building-columns text-brand-cyan"></i>
+                            <span class="text-sm">Govt. of Telangana</span>
+                        </div>
+                        <div class="px-6 py-3 rounded bg-white/5 border border-white/10 flex items-center gap-3 hover:bg-white/10 transition-colors cursor-default">
+                            <i class="fa-solid fa-lightbulb text-brand-cyan"></i>
+                            <span class="text-sm">Innovation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievement Image (Updated with robust placeholder) -->
+                <div class="lg:w-1/3 w-full reveal delay-100">
+                    <div class="relative group cursor-pointer border-2 border-dashed border-white/30 rounded-xl bg-white/5 p-4 hover:border-brand-cyan hover:bg-white/10 transition-all duration-300 h-80 flex flex-col items-center justify-center text-center overflow-hidden">
+                        <!-- Updated Image Source -->
+                        <img src="images/22.jpg" 
+                             alt="Ideathon Award Certificate" 
+                             class="absolute inset-0 w-full h-full object-cover rounded-lg transition-transform duration-500 group-hover:scale-105"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="hidden absolute inset-0 flex-col items-center justify-center bg-brand-navy/80 p-4">
+                            <i class="fa-solid fa-certificate text-4xl text-brand-cyan mb-2"></i>
+                            <span class="text-white text-sm">Award Certificate Image</span>
+                        </div>
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white font-bold bg-black/50 px-4 py-2 rounded-full backdrop-blur-sm border border-white/20">View Certificate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <!-- Contact Info -->
+                <div class="reveal">
+                    <span class="text-brand-cyan font-bold uppercase tracking-widest text-xs mb-2 block">Get In Touch</span>
+                    <h2 class="text-4xl font-bold text-brand-navy mb-6">Start Your Project</h2>
+                    <p class="text-slate-600 mb-10 text-lg leading-relaxed">Ready to build something iconic? Reach out to our team for a consultation and quote.</p>
+                    
+                    <div class="space-y-8 mb-10">
+                        <div class="flex items-start gap-5 p-4 rounded bg-slate-50 border border-slate-100 group hover:border-brand-cyan transition-colors hover:shadow-sm">
+                            <div class="w-12 h-12 rounded bg-white flex items-center justify-center text-brand-cyan shadow-sm flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-location-dot text-lg"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-brand-navy text-lg mb-1">Head Office</h5>
+                                <p class="text-slate-500 text-sm">SKU ATAL INCUBATION CENTER<br>Ananthapur, Andhra Pradesh</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-5 p-4 rounded bg-slate-50 border border-slate-100 group hover:border-brand-cyan transition-colors hover:shadow-sm">
+                            <div class="w-12 h-12 rounded bg-white flex items-center justify-center text-brand-cyan shadow-sm flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-phone text-lg"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-brand-navy text-lg mb-1">Phone</h5>
+                                <p class="text-slate-500 font-medium text-sm">+91 9347051097</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-5 p-4 rounded bg-slate-50 border border-slate-100 group hover:border-brand-cyan transition-colors hover:shadow-sm">
+                            <div class="w-12 h-12 rounded bg-white flex items-center justify-center text-brand-cyan shadow-sm flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-envelope text-lg"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-brand-navy text-lg mb-1">Email</h5>
+                                <p class="text-slate-500 font-medium text-sm">info@amruthadharainfra.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form (Glass/Metal Look) -->
+                <div class="bg-gradient-to-br from-slate-50 to-white p-8 md:p-10 rounded shadow-2xl border border-slate-200 reveal delay-100 sticky top-24">
+                    <h3 class="text-2xl font-bold text-brand-navy mb-6">Send us a message</h3>
+                    <form onsubmit="event.preventDefault(); alert('Thank you for your message! We will get back to you shortly.');">
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wide text-slate-500 mb-2">First Name</label>
+                                <input type="text" class="w-full px-4 py-3 rounded bg-white border border-slate-300 focus:border-brand-cyan focus:outline-none focus:ring-1 focus:ring-brand-cyan transition-all" placeholder="First name" required>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wide text-slate-500 mb-2">Last Name</label>
+                                <input type="text" class="w-full px-4 py-3 rounded bg-white border border-slate-300 focus:border-brand-cyan focus:outline-none focus:ring-1 focus:ring-brand-cyan transition-all" placeholder="Last name" required>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-xs font-bold uppercase tracking-wide text-slate-500 mb-2">Email Address</label>
+                            <input type="email" class="w-full px-4 py-3 rounded bg-white border border-slate-300 focus:border-brand-cyan focus:outline-none focus:ring-1 focus:ring-brand-cyan transition-all" placeholder="name@company.com" required>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-xs font-bold uppercase tracking-wide text-slate-500 mb-2">Service Needed</label>
+                            <div class="relative">
+                                <select class="w-full px-4 py-3 rounded bg-white border border-slate-300 focus:border-brand-cyan focus:outline-none focus:ring-1 focus:ring-brand-cyan transition-all appearance-none cursor-pointer">
+                                    <option>General Contracting</option>
+                                    <option>Design & Build</option>
+                                    <option>Industrial Projects</option>
+                                    <option>Other</option>
+                                </select>
+                                <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-slate-500">
+                                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-xs font-bold uppercase tracking-wide text-slate-500 mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded bg-white border border-slate-300 focus:border-brand-cyan focus:outline-none focus:ring-1 focus:ring-brand-cyan transition-all resize-none" placeholder="Tell us about your project..." required></textarea>
+                        </div>
+                        <button type="submit" class="w-full btn-shine bg-brand-navy text-white font-bold py-4 rounded hover:bg-brand-blue transition-all duration-300 shadow-lg tracking-wider uppercase text-sm">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-navy text-white pt-20 pb-10 border-t-4 border-brand-cyan relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div>
+                    <a href="#" class="text-2xl font-bold flex items-center gap-3 mb-6 group">
+                        <div class="h-8 w-8 bg-white rounded flex items-center justify-center text-brand-navy text-sm group-hover:rotate-12 transition-transform"><i class="fa-solid fa-city"></i></div>
+                        <span class="tracking-tight font-display">Amruthadhara <span class="text-brand-cyan">Infra</span></span>
+                    </a>
+                    <p class="text-slate-400 mb-6 text-sm leading-relaxed">Building the future with precision, integrity, and excellence. Your trusted partner in construction engineering.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-cyan hover:text-white transition-all duration-300 hover:-translate-y-1"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-cyan hover:text-white transition-all duration-300 hover:-translate-y-1"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-cyan hover:text-white transition-all duration-300 hover:-translate-y-1"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <!-- Added YouTube and Instagram -->
+                        <a href="#" class="w-10 h-10 rounded bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-cyan hover:text-white transition-all duration-300 hover:-translate-y-1"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-cyan hover:text-white transition-all duration-300 hover:-translate-y-1"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white uppercase tracking-wider text-xs">Quick Links</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#about" class="text-slate-400 hover:text-brand-cyan transition-colors block py-1 hover:translate-x-1 duration-200">About Company</a></li>
+                        <li><a href="#services" class="text-slate-400 hover:text-brand-cyan transition-colors block py-1 hover:translate-x-1 duration-200">Our Services</a></li>
+                        <li><a href="#projects" class="text-slate-400 hover:text-brand-cyan transition-colors block py-1 hover:translate-x-1 duration-200">Recent Projects</a></li>
+                        <li><a href="#contact" class="text-slate-400 hover:text-brand-cyan transition-colors block py-1 hover:translate-x-1 duration-200">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white uppercase tracking-wider text-xs">Services</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="text-slate-400 hover:text-brand-cyan transition-colors block py-1 hover:translate-x-1 duration-200">General Contracting</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-brand-cyan transition-colors block py-1 hover:translate-x-1 duration-200">Construction Management</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-brand-cyan transition-colors block py-1 hover:translate-x-1 duration-200">Renovation</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-brand-cyan transition-colors block py-1 hover:translate-x-1 duration-200">Civil Engineering</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white uppercase tracking-wider text-xs">Newsletter</h4>
+                    <p class="text-slate-400 mb-4 text-sm">Subscribe to our newsletter for the latest updates.</p>
+                    <form onsubmit="event.preventDefault(); alert('Subscribed!');" class="flex flex-col gap-2">
+                        <input type="email" placeholder="Email address" class="px-4 py-3 rounded bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-brand-cyan placeholder-slate-600 text-sm transition-colors">
+                        <button class="px-4 py-3 rounded bg-brand-cyan font-bold text-white hover:bg-brand-blue transition-all duration-300 text-sm shadow-lg hover:shadow-glow">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2026 Amruthadhara Infra. All Rights Reserved.</p>
+                <div class="flex space-x-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Preloader Logic
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            // Give time for the corner animation to complete (2.5s) plus a little extra
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => { preloader.style.display = 'none'; }, 800);
+            }, 3000); 
+        });
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            if (mobileMenu.style.maxHeight) {
+                mobileMenu.style.maxHeight = null;
+                mobileMenuBtn.querySelector('i').classList.remove('fa-xmark');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars-staggered');
+            } else {
+                mobileMenu.style.maxHeight = mobileMenu.scrollHeight + "px";
+                mobileMenuBtn.querySelector('i').classList.remove('fa-bars-staggered');
+                mobileMenuBtn.querySelector('i').classList.add('fa-xmark');
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.style.maxHeight = null;
+                mobileMenuBtn.querySelector('i').classList.remove('fa-xmark');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars-staggered');
+            });
+        });
+
+        // Scroll Logic
+        const navbar = document.getElementById('navbar');
+        const progressBar = document.getElementById('scroll-progress');
+        const backToTopBtn = document.getElementById('back-to-top');
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            
+            // Progress Bar
+            const scrollPercent = (currentScroll / docHeight) * 100;
+            progressBar.style.width = scrollPercent + '%';
+
+            // Navbar
+            if (currentScroll > 50) {
+                navbar.classList.add('bg-brand-navy/90', 'backdrop-blur-md', 'shadow-lg');
+                navbar.classList.remove('py-4', 'border-white/5');
+                navbar.classList.add('py-2', 'border-brand-cyan/20');
+            } else {
+                navbar.classList.remove('bg-brand-navy/90', 'backdrop-blur-md', 'shadow-lg', 'py-2', 'border-brand-cyan/20');
+                navbar.classList.add('py-4', 'border-white/5');
+            }
+
+            // Back to Top
+            if (currentScroll > 500) {
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+            }
+
+            // Active Links
+            let currentSectionId = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= (sectionTop - 200)) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                // Remove active class from underline span if needed, but basic color change is fine
+                link.style.color = '';
+                if (link.getAttribute('href').includes(currentSectionId)) {
+                    link.style.color = '#00b4d8';
+                }
+            });
+        });
+
+        // Observer for Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Number Counter
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.counter');
+                    counters.forEach(counter => {
+                        const target = +counter.getAttribute('data-target');
+                        const speed = 200;
+                        const updateCount = () => {
+                            const count = +counter.innerText;
+                            const inc = target / speed;
+                            if (count < target) {
+                                counter.innerText = Math.ceil(count + inc);
+                                setTimeout(updateCount, 20);
+                            } else {
+                                counter.innerText = target + '+';
+                            }
+                        };
+                        updateCount();
+                    });
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.bg-gradient-to-r');
+        if(statsSection) counterObserver.observe(statsSection);
+
+    </script>
+</body>
+</html>
